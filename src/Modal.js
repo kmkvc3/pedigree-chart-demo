@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 export default function Modal({ chart, pedigree, setModalVisible }) {
   const [sex, setSex] = useState("unknown");
@@ -32,34 +33,23 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
           break;
       }
     }
-    chart.connect(pedigree, newPedigree, connect)
+    chart.connect(pedigree, newPedigree, connect);
   }
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        width: 400,
-        height: 500,
-        left: "calc(50% - 200px)",
-        top: "calc(50% - 280px)",
-        backgroundColor: "#FBFBFB",
-        boxShadow: "0px 2px 12px 6px #E8E4E4",
-        borderRadius: 10,
-      }}
-    >
+    <div className="modal">
       <h2>Create a new pedigree</h2>
-      <label>
+      <label className="label">
         <p>Sex</p>
         <select onChange={changeSex}>
           <option value="male">Male</option>
-          <option selected value="female">Female</option>
-          <option value="unknown">
-            Unknown
+          <option selected value="female">
+            Female
           </option>
+          <option value="unknown">Unknown</option>
         </select>
       </label>
-      <label>
+      <label className="label">
         <p>Type</p>
         <select onChange={changeType}>
           <option selected value="">
@@ -68,10 +58,12 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
           <option value="proband">Proband</option>
           <option value="deceased">Deceased</option>
           <option value="multiple">Multiple</option>
-          <option selected value="pregnant">Pregnant</option>
+          <option selected value="pregnant">
+            Pregnant
+          </option>
         </select>
       </label>
-      <label>
+      <label className="label">
         <p>Connection</p>
         <select onChange={changeConnect}>
           <option value="partnership">Partnership</option>
@@ -82,21 +74,26 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
           </option>
         </select>
       </label>
-      <button
-        onClick={() => {
-          setModalVisible(false);
-        }}
-      >
-        <p>close</p>
-      </button>
-      <button
-        onClick={() => {
-          createPedigree();
-          setModalVisible(false);
-        }}
-      >
-        <p>create</p>
-      </button>
+      <br />
+      <div className="buttons">
+        <button
+          onClick={() => {
+            setModalVisible(false);
+          }}
+          className="close"
+        >
+          <p>Close</p>
+        </button>
+        <button
+          onClick={() => {
+            createPedigree();
+            setModalVisible(false);
+          }}
+          className="create"
+        >
+          <p>Create</p>
+        </button>
+      </div>
     </div>
   );
 }
