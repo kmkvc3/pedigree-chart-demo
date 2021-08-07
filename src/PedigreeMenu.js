@@ -15,14 +15,15 @@ export default function Dots({ x, y, chart, pedigree }) {
     <div
       style={{
         position: "absolute",
-        top: y+30,
+        top: y+20,
         left: x+30,
       }}
+      className="pedigree-menu"
     >
-      <button onClick={()=>{setModalVisible(true)}}>Add</button>
-      <button>Modify</button>
-      <button onClick={()=>{chart.delete(pedigree.id)}}>Remove</button>
-      <button onClick={()=>{generateParents()}}>Generate parents</button>
+      <button className="button green-btn" onClick={()=>{setModalVisible(true)}}>Add</button>
+      <button className="button yellow-btn">Modify</button>
+      <button className="button red-btn" onClick={()=>{chart.delete(pedigree.id)}}>Remove</button>
+      <button className="button green-btn" onClick={()=>{generateParents()}}>Generate parents</button>
       {modalVisible ? <AddModal pedigree={pedigree} setModalVisible={setModalVisible} chart={chart} /> : null}
     </div>
   );

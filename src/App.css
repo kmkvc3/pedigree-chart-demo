@@ -36,3 +36,27 @@ div.modal {
 .buttons button.close {
   background-color: rgb(255, 71, 71);
 }
+.pedigree-menu {
+  box-shadow: 0px 2px 3px 1px rgb(235, 233, 233);
+  background-color: whitesmoke;
+  padding: 6px 2px;
+  border-radius: 6px;
+}
+.button {
+  padding: 6px;
+  min-width: 50px;
+  margin: 0 8px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+.button.green-btn {
+  background-color: rgb(82, 163, 57);
+}
+.button.yellow-btn {
+  background-color: rgb(202, 187, 53);
+}
+.button.red-btn {
+  background-color: rgb(163, 57, 57);
+}
