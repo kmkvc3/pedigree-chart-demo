@@ -6579,6 +6579,7 @@
     "jest-snapshot" "^26.6.2"
 
 "jest-resolve@*":
+  "integrity" "sha512-tRAz2bwraHufNp+CCmAD8ciyCpXCs1NQxB5EJAmtCFy6BN81loFEGWKzYu26Y62lAJJe4X4jg36Kf+NsQyiStQ=="
   "version" "26.6.0"
   dependencies:
     "@jest/types" "^26.6.0"
@@ -8166,10 +8167,10 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
-"pedigree-chart@^1.0.3":
-  "integrity" "sha512-R+meetEV99GnRTJYq3juKYM0SKDdB3QIaf7Lp5MIRMRj6NDtb/kMgGQN/d91pyI6ZUCp9XAkokRTpzQ56d4f/g=="
-  "resolved" "https://registry.npmjs.org/pedigree-chart/-/pedigree-chart-1.0.3.tgz"
-  "version" "1.0.3"
+"pedigree-chart@^1.0.4":
+  "integrity" "sha512-Dl7X2918lfpAWT2q7h2OX5g/tlvitkbR6HVEHP9k4BrM9jU7k2KyCjzdOem7OZxDXzPFyalPqRRDTM1LbqB+6Q=="
+  "resolved" "https://registry.npmjs.org/pedigree-chart/-/pedigree-chart-1.0.4.tgz"
+  "version" "1.0.4"
   dependencies:
     "typescript" "^4.2.4"
 
