@@ -52,6 +52,7 @@ function App() {
           y={menuPosition.y}
           chart={chart}
           pedigree={lastPickedPedigree}
+          setMenuVisible={setMenuVisible}
         />
       ) : null}
       <canvas id="chart"></canvas>

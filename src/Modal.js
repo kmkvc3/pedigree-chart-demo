@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import "./App.css";
 
-export default function Modal({ chart, pedigree, setModalVisible }) {
+export default function Modal({
+  chart,
+  pedigree,
+  setModalVisible,
+  setMenuVisible,
+}) {
   const [sex, setSex] = useState("unknown");
   const [type, setType] = useState("");
-  const [connect, setConnect] = useState("sibling");
+  const [connect, setConnect] = useState("partnership");
 
   function changeSex(event) {
     setSex(event.target.value);
@@ -16,7 +21,7 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
     setConnect(event.target.value);
   }
   function createPedigree() {
-    const newPedigree = chart.create(sex, 260, 100);
+    const newPedigree = chart.create(sex, 260, 160);
     if (type !== "") {
       switch (type) {
         case "proband":
@@ -64,12 +69,12 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
       <label className="label">
         <p>Connection</p>
         <select onChange={changeConnect}>
-          <option value="partnership">Partnership</option>
+          <option selected value="partnership">
+            Partnership
+          </option>
           <option value="separation">Separation</option>
           <option value="consanguineous">Consanguineous</option>
-          <option selected value="sibling">
-            Siblings
-          </option>
+          <option value="sibling">Siblings</option>
         </select>
       </label>
       <br />
@@ -77,6 +82,7 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
         <button
           onClick={() => {
             setModalVisible(false);
+            setMenuVisible(false);
           }}
           className="close"
         >
@@ -86,6 +92,7 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
           onClick={() => {
             createPedigree();
             setModalVisible(false);
+            setMenuVisible(false);
           }}
           className="create"
         >
