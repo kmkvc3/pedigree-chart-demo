@@ -1,9 +1,16 @@
 import "./App.css";
 import PedigreeChart from "pedigree-chart";
 import { useEffect, useState } from "react";
+import PedigreeMenu from "./PedigreeMenu";
 
 function App() {
-  const [chart, setChart] = useState(undefined)
+  const [chart, setChart] = useState(undefined);
+  const [lastPickedPedigree, setLastPickedPedigree] = useState(undefined);
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({
+    x: 0,
+    y: 0,
+  });
 
   useEffect(() => {
     const chart = new PedigreeChart();
@@ -14,12 +21,39 @@ function App() {
       dragEnabled: true,
       panEnabled: true,
     });
-    setChart(chart)
+    setChart(chart);
+    const unknown = chart.create("unknown", 460, 100);
+    unknown.setLabel({ k: "Click on me!" });
+
+    chart.remove("pedigree-drag");
+    chart.remove("pedigree-click");
+    chart.remove("diagram-click");
+
+    chart.on("pedigree-drag", (pedigree) => {
+      setMenuVisible(true);
+      setMenuPosition({ x: pedigree.getX(), y: pedigree.getY() });
+    });
+    chart.on("pedigree-click", (pedigree) => {
+      setMenuVisible(true);
+      setLastPickedPedigree(pedigree);
+      setMenuPosition({ x: pedigree.getX(), y: pedigree.getY() });
+    });
+    chart.on("diagram-click", () => {
+      setMenuVisible(false);
+    });
   }, []);
 
   return (
     <div className="App">
       <h1>Pedigree creator demo</h1>
+      {menuVisible ? (
+        <PedigreeMenu
+          x={menuPosition.x}
+          y={menuPosition.y}
+          chart={chart}
+          pedigree={lastPickedPedigree}
+        />
+      ) : null}
       <canvas id="chart"></canvas>
     </div>
   );
