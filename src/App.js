@@ -16,13 +16,13 @@ function App() {
     const chart = new PedigreeChart();
     chart.setDiagram("chart");
     chart.setConfig({
-      width: 1000,
+      width: 1100,
       height: 500,
       dragEnabled: true,
       panEnabled: true,
     });
     setChart(chart);
-    const unknown = chart.create("unknown", 460, 100);
+    const unknown = chart.create("unknown", 520, 160);
     unknown.setLabel({ k: "Click on me!" });
 
     chart.remove("pedigree-drag");

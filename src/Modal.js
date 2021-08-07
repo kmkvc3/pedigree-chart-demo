@@ -16,7 +16,7 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
     setConnect(event.target.value);
   }
   function createPedigree() {
-    const newPedigree = chart.create(sex, 100, 100);
+    const newPedigree = chart.create(sex, 260, 100);
     if (type !== "") {
       switch (type) {
         case "proband":
@@ -43,10 +43,10 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
         <p>Sex</p>
         <select onChange={changeSex}>
           <option value="male">Male</option>
-          <option selected value="female">
-            Female
+          <option value="female">Female</option>
+          <option selected value="unknown">
+            Unknown
           </option>
-          <option value="unknown">Unknown</option>
         </select>
       </label>
       <label className="label">
@@ -58,9 +58,7 @@ export default function Modal({ chart, pedigree, setModalVisible }) {
           <option value="proband">Proband</option>
           <option value="deceased">Deceased</option>
           <option value="multiple">Multiple</option>
-          <option selected value="pregnant">
-            Pregnant
-          </option>
+          <option value="pregnant">Pregnant</option>
         </select>
       </label>
       <label className="label">
