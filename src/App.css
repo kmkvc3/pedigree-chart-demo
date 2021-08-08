@@ -34,7 +34,7 @@ div.modal {
   background-color: rgb(71, 157, 255);
 }
 .buttons button.close {
-  background-color: rgb(255, 71, 71);
+  background-color: #ff4747;
 }
 .pedigree-menu {
   box-shadow: 0px 2px 3px 1px rgb(235, 233, 233);
