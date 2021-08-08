@@ -3,6 +3,7 @@ import PedigreeChart from "pedigree-chart";
 import { useEffect, useState } from "react";
 import PedigreeMenu from "./PedigreeMenu";
 import Labels from "./Labels"
+import Legends from "./Legends"
 
 function App() {
   const [chart, setChart] = useState(undefined);
@@ -58,6 +59,7 @@ function App() {
       ) : null}
       <canvas id="chart"></canvas>
       <Labels />
+      <Legends />
     </div>
   );
 }
