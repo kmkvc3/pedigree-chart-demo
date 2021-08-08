@@ -2,8 +2,8 @@ import "./App.css";
 import PedigreeChart from "pedigree-chart";
 import { useEffect, useState } from "react";
 import PedigreeMenu from "./PedigreeMenu";
-import Labels from "./Labels"
-import Legends from "./Legends"
+import Labels from "./Labels";
+import Legends from "./Legends";
 
 function App() {
   const [chart, setChart] = useState(undefined);
@@ -60,6 +60,17 @@ function App() {
       <canvas id="chart"></canvas>
       <Labels />
       <Legends />
+      <h2>Project was build using pedigree-chart library</h2>
+      <h3>
+        <a href="https://github.com/kmkvc3/pedigree-chart-demo" target="_blank">
+          Check out its source code
+        </a>
+      </h3>
+      <h3>
+        <a href="https://kmkvc3.github.io/pedigree-chart-docs/" target="_blank">
+          Check the pedigree-chart docs
+        </a>
+      </h3>
     </div>
   );
 }
