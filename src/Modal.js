@@ -10,6 +10,8 @@ export default function Modal({
   const [sex, setSex] = useState("unknown");
   const [type, setType] = useState("");
   const [connect, setConnect] = useState("partnership");
+  const [x, setX] = useState(260)
+  const [y, setY] = useState(160)
 
   function changeSex(event) {
     setSex(event.target.value);
@@ -21,7 +23,7 @@ export default function Modal({
     setConnect(event.target.value);
   }
   function createPedigree() {
-    const newPedigree = chart.create(sex, 260, 160);
+    const newPedigree = chart.create(sex, x, y);
     if (type !== "") {
       switch (type) {
         case "proband":
@@ -76,6 +78,14 @@ export default function Modal({
           <option value="consanguineous">Consanguineous</option>
           <option value="sibling">Siblings</option>
         </select>
+      </label>
+      <label className="label">
+        <p>Starting X position</p>
+        <input type="number" onChange={(e)=>setX(Number(e.target.value))} defaultValue={x}></input>
+      </label>
+      <label className="label">
+        <p>Starting Y position</p>
+        <input type="number" onChange={(e)=>setY(Number(e.target.value))} defaultValue={y} ></input>
       </label>
       <br />
       <div className="buttons">
