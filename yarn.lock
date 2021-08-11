@@ -8167,10 +8167,10 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
-"pedigree-chart@^1.0.4":
-  "integrity" "sha512-Dl7X2918lfpAWT2q7h2OX5g/tlvitkbR6HVEHP9k4BrM9jU7k2KyCjzdOem7OZxDXzPFyalPqRRDTM1LbqB+6Q=="
-  "resolved" "https://registry.npmjs.org/pedigree-chart/-/pedigree-chart-1.0.4.tgz"
-  "version" "1.0.4"
+"pedigree-chart@^1.0.5":
+  "integrity" "sha512-4nXM0Q1ioyUE0U3P5HMYR71KNtEWxKzEVOWnX/n/01JYMU+1bYinSCzEKBGvcrwrBk2BxLA7U9ZRc8q9dyIZAw=="
+  "resolved" "https://registry.npmjs.org/pedigree-chart/-/pedigree-chart-1.0.5.tgz"
+  "version" "1.0.5"
   dependencies:
     "typescript" "^4.2.4"
 
