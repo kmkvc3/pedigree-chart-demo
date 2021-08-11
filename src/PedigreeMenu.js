@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import AddModal from "./Modal";
+import AddModal from "./AddModal";
+import ModifyModal from "./ModifyModal";
 
 export default function Dots({ x, y, chart, pedigree, setMenuVisible }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [modifyModalVisible, setModifyModalVisible] = useState(false);
 
   function generateParents() {
     const father = chart.create(
@@ -36,7 +38,11 @@ export default function Dots({ x, y, chart, pedigree, setMenuVisible }) {
       >
         Add
       </button>
-      <button className="button yellow-btn">Modify</button>
+      <button className="button yellow-btn" 
+        onClick={()=>{
+          setModifyModalVisible(true)
+        }}
+      >Modify</button>
       <button
         className="button red-btn"
         onClick={() => {
@@ -59,6 +65,14 @@ export default function Dots({ x, y, chart, pedigree, setMenuVisible }) {
         <AddModal
           pedigree={pedigree}
           setModalVisible={setModalVisible}
+          setMenuVisible={setMenuVisible}
+          chart={chart}
+        />
+      ) : null}
+      {modifyModalVisible ? (
+        <ModifyModal
+          pedigree={pedigree}
+          setModifyModalVisible={setModifyModalVisible}
           setMenuVisible={setMenuVisible}
           chart={chart}
         />
